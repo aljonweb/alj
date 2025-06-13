@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="media/icon.png">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="media/icon.png" alt="">
+      </div>
+      <div class="nav-bar">
+        <ul>
+          <li><a href="index.html">HOMEPAGE</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+   <main>
+        <div class="banner">
+          <img src="media/banneres.png" alt="">
+        </div>
+      </main>
+
+  <section class="containers">
+    <div class="containeres">
+    <form class="contact-form" onsubmit="return Submit(event)">
+      <div class="form-row">
+        <label>First Name</label>
+        <input type="text" id="firstname" placeholder="Your First Name" >
+      </div>
+      <div class="form-row">
+        <label>Last Name</label>
+        <input type="text" id="lastname" placeholder="Your Last Name" >
+      </div>
+      <div class="form-row">
+        <label>Telephone No.</label>
+        <input type="text" id="telephone" placeholder="Valid formats: (123) 456-7890, (123)456-7890, 123-456-7890, 123.456.7890" >
+      </div>
+      <div class="form-row">
+        <label>E-mail:</label>
+        <input type="email" id="email" placeholder="sample@host.com" >
+      </div>
+      <div class="form-row">
+        <label>Organization</label>
+        <input type="text" id="organization">
+      </div>
+      <div class="form-row">
+        <label>Province</label>
+        <select id="province">
+          <option>Select your Province</option>
+          <option value="Davao Del Norte">Davao Del Norte</option>
+          <option value="Davao Del Sur">Davao Del Sur</option>
+          <option value="Davao De Oro">Davao De Oro</option>
+         
+        </select>
+      </div>
+      <div class="form-row">
+        <label>City/Town</label>
+        <select id="city">
+          <option>Select your Municipality or City</option>
+          <option value="Tagum City">Tagum City</option>
+          <option value="Panabo City">Panabo City</option>
+          <option value="Davao City">Davao City</option>
+          
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Barangay</label>
+        <select id="barangay">
+          <option>Select your Barangay</option>
+          <option value="Mankilam">Mankilam</option>
+          <option value="Visayan Village">Visayan Village</option>
+          <option value="Apokon">Apokon</option>
+          
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="strt">Street</label>
+        <input type="text" id="street">
+      </div>
+      <div class="form-row">
+        <label>Message</label>
+        <textarea id="message" placeholder="write something...."></textarea>
+        
+      </div>
+      <div class="form-row">
+        <div class="btn">
+      <button type="submit">Submit</button> 
+
+        </div>
+      
+      </div>
+    </form>
+    
+  </div>
+  
+  </section>
+
+   <footer>
+    <div class="footer">
+      <div class="contain">
+      <p>Copyright (c) 2022, JQE Friends</p>
+    </div>
+    </div>
+  </footer>
+
+
+
+  <script>
+
+   function Submit(event) {
+    event.preventDefault();
+
+
+
+
+    let firstname = document.getElementById("firstname").value
+    let lastname = document.getElementById("lastname").value
+    let telephone = document.getElementById("telephone").value
+    let email = document.getElementById("email").value
+    let organization = document.getElementById("organization").value
+    let province = document.getElementById("province").value
+    let city = document.getElementById("city").value
+    let barangay = document.getElementById("barangay").value
+    let street = document.getElementById("street").value
+    let message = document.getElementById("message").value
+      
+
+
+    if(firstname == "" || lastname == "" || telephone == "" || email == "" || organization == "" || province == "" || city == "" || barangay == "" || street == "" || message == "" ){
+      
+      alert("All fields must be filled out!")
+      return false;
+
+
+    }
+      else if(firstname.toUpperCase() === lastname.toUpperCase()){
+        alert("The First and Lastname should not be the same!")
+      }
+      
+      else if  (province !== "Davao Del Norte"){
+        alert("Invalid Province Address. Please select Davao Del Norte")
+      }
+      
+      
+      else if (city !== "Tagum City"){
+        alert("Invalid City Address. Please select Tagum City")
+      }
+      
+      else if (barangay !== "Mankilam"){
+        alert("Invalid Barangay Address. Please select Mankilam")
+      }
+
+      else if(isNaN(telephone)){
+        alert("Please input a number in telephone!")
+      }
+      
+      
+      else if(message.length<10){
+        alert("Message length is less than 10!")
+      }
+      
+      else{
+        alert("Well Done!")
+        return false;
+      }
+
+      
+      
+    }
+   
+
+   
+  
+
+  </script>
+ 
+</body>
+</html>
